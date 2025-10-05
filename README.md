@@ -1,50 +1,48 @@
-# Welcome to your Expo app 👋
+🍔Food Delivery Mobile App (React Native + Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern food delivery application built with React Native and powered by Expo, featuring an elegant user interface, smooth navigation, and a scalable architecture.
+This project demonstrates a complete mobile app development workflow — from UI design to backend integration.
 
-## Get started
+🚀 Features
+Onboarding & Auth
+Welcome / splash screens
+Sign up, login, password reset
+Token persistence (AsyncStorage / SecureStore)
 
-1. Install dependencies
 
-   ```bash
-   npm install
-   ```
+Home / Restaurant Browsing
+List of restaurants
+Category filters, search
+Restaurant details & menu
 
-2. Start the app
+Cart & Order
+Add / remove / adjust quantities
+Cart summary & total
+Checkout flow (delivery details, payment)
 
-   ```bash
-   npx expo start
-   ```
+Order Tracking & Status
+View current orders & status updates
+Order history
 
-In the output, you'll find options to open the app in a
+User Profile & Settings
+Personal info & address management
+Logout
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Theming & Styles
+Light / dark mode
+Clean, consistent UI (based on Figma design)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Responsive & performant
+Smooth navigation, image loading, lazy loading
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+🧰 Tech Stack & Tools
+| Layer            | Tool / Library                                                         |
+| ---------------- | ---------------------------------------------------------------------- |
+| Base / Framework | React Native + Expo                                                    |
+| Navigation       | React Navigation (stack, bottom tabs)                                  |
+| State Management | React Context / Redux Toolkit / Zustand                                |
+| Styling & UI     | Tailwind-like utility (NativeWind) / Styled Components / Custom design |
+| Icons & Assets   | Lucide / Feather / Custom SVGs                                         |
+| Backend / API    | (Optional) Appwrite / Firebase / REST API                              |
+| Storage          | AsyncStorage / SecureStore / SQLite (if offline)                       |
+| Assets & Media   | Local images, remote image loading with caching                        |

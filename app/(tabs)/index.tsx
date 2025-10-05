@@ -4,6 +4,7 @@ import {images, offers} from "@/constants";
 import {Fragment} from "react";
 import cn from 'clsx'
 import ScrollView = Animated.ScrollView;
+import CartButton from "@/components/CartButton";
 
 export default function Index() {
   return (
@@ -52,7 +53,7 @@ export default function Index() {
 
                                 </TouchableOpacity>
                             </View>
-                            <Text>Cart</Text>
+                            <CartButton />
                         </View>
                     )}
           />
