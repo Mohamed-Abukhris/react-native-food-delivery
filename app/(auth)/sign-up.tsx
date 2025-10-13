@@ -3,52 +3,49 @@ import {Link, router} from "expo-router";
 import CustomInput from "@/components/CustomInput";
 import CustomButton from "@/components/CustomButton";
 import {useState} from "react";
+import {createUser} from "@/lib/appwrite";
 
 const SignUp = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [form, setForm] = useState({name: '', email: '', password: ''});
+    const [form, setForm] = useState({ name: '', email: '', password: '' });
 
     const submit = async () => {
-        if(!form.name  || !form.email || !form.password) return Alert.alert('Error', 'Please enter a valid email address & password');
+        const { name, email, password } = form;
+
+        if(!name || !email || !password) return Alert.alert('Error', 'Please enter valid email address & password.');
 
         setIsSubmitting(true)
 
-        try{
-            // Call the appwrite sign Up function
+        try {
+            await createUser({ email,  password,  name });
 
-            Alert.alert('Success', 'User signed up successfully.');
             router.replace('/');
-
-        } catch(error:any){
+        } catch(error: any) {
             Alert.alert('Error', error.message);
-        } finally{
-            setIsSubmitting(false)
+        } finally {
+            setIsSubmitting(false);
         }
-
-
     }
-
-
 
     return (
         <View className="gap-10 bg-white rounded-lg p-5 mt-5">
             <CustomInput
                 placeholder="Enter your full name"
-                value={form.email}
-                onChangeText={(text) => setForm((prev)=> ({ ...prev, name: text}))}
+                value={form.name}
+                onChangeText={(text) => setForm((prev) => ({ ...prev, name: text }))}
                 label="Full name"
             />
             <CustomInput
                 placeholder="Enter your email"
                 value={form.email}
-                onChangeText={(text) => setForm((prev)=> ({ ...prev, email: text}))}
+                onChangeText={(text) => setForm((prev) => ({ ...prev, email: text }))}
                 label="Email"
                 keyboardType="email-address"
             />
             <CustomInput
                 placeholder="Enter your password"
                 value={form.password}
-                onChangeText={(text) => setForm((prev)=> ({ ...prev, password: text}))}
+                onChangeText={(text) => setForm((prev) => ({ ...prev, password: text }))}
                 label="Password"
                 secureTextEntry={true}
             />
@@ -70,4 +67,5 @@ const SignUp = () => {
         </View>
     )
 }
+
 export default SignUp
